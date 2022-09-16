@@ -1,0 +1,27 @@
+<resources>
+
+
+    <style name="Widget.SkyCastle.Button" parent="Widget.Material3.Button" />
+
+    <style name="Widget.SkyCastle.Button.OutlinedButton">
+        <item name="android:background">@drawable/span_primary_small_bg</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="Widget.SkyCastle.Button.OutlinedButton.Large">
+        <item name="android:textSize">20sp</item>
+        <item name="android:width">200dp</item>
+    </style>
+
+    <style name="Widget.SkyCastle.TextInputEditText.OutlinedBox" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+    </style>
+
+    <style name="Widget.SkyCastle.TextInputEditText.OutlinedBox.Login">
+        <item name="android:backgroundTint">#33000000</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">#88ffffff</item>
+    </style>
+</resources>
