@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.AndroidJetpackCompose" parent="Theme.Material3.Light.NoActionBar">
+        <item name="buttonStyle">@style/Widget.SkyCastle.Button.OutlinedButton.Large</item>
+        <item name="materialButtonStyle">@style/Widget.SkyCastle.Button.OutlinedButton.Large</item>
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+
+</resources>
