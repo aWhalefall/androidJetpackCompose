@@ -20,6 +20,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.MeasureScope
+import androidx.compose.ui.layout.Placeable
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,36 +40,36 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AndroidJetpackComposeTheme {
-                val navController = rememberNavController()
-                Column {
-                    Greeting(name = "hello world", onclilck = {
-                        this@MainActivity.startActivity(
-                            Intent(
-                                this@MainActivity, MainActivity2::class.java
-                            )
-                        )
-                    })
-
-                    Button(onClick = {
-                        val intent = Intent(Intent.ACTION_GET_CONTENT)
-                        intent.setType("*/*")
-                        intent.addCategory(Intent.CATEGORY_OPENABLE)
-                        startActivityForResult(Intent.createChooser(intent, "选择一个文件"), 1)
-                    }) {
-                        Text(text = "选择文件")
-                    }
-                    Spacer(modifier = Modifier.requiredHeight(30.dp))
-
-                    Button(onClick = { navController.navigate("profile") }) {
-                        Text(text = "导航")
-                    }
-                    MineNavaHost(navController = navController)
-                }
+                HomeScreen(modifier = Modifier)
+                //                val navController = rememberNavController()
+//                Column {
+//                    Greeting(name = "hello world", onclilck = {
+//                        this@MainActivity.startActivity(
+//                            Intent(
+//                                this@MainActivity, MainActivity2::class.java
+//                            )
+//                        )
+//                    })
+//
+//                    Button(onClick = {
+//                        val intent = Intent(Intent.ACTION_GET_CONTENT)
+//                        intent.setType("*/*")
+//                        intent.addCategory(Intent.CATEGORY_OPENABLE)
+//                        startActivityForResult(Intent.createChooser(intent, "选择一个文件"), 1)
+//                    }) {
+//                        Text(text = "选择文件")
+//                    }
+//                    Spacer(modifier = Modifier.requiredHeight(30.dp))
+//
+//                    Button(onClick = { navController.navigate("profile") }) {
+//                        Text(text = "导航")
+//                    }
+//                    MineNavaHost(navController = navController)
+//                }
             }
         }
     }
 }
-
 
 
 @Composable
@@ -149,6 +151,14 @@ fun ButtonBackGround() {
 fun DefaultPreview() {
     AndroidJetpackComposeTheme {
         Greeting("Android", {}, ImageBitmap.imageResource(id = R.mipmap.test))
+    }
+}
+
+@Preview(showSystemUi = true, device = "spec:parent=pixel_5,orientation=landscape")
+@Composable
+fun HomeScrrenSample() {
+    AndroidJetpackComposeTheme {
+        HomeScreen(modifier = Modifier)
     }
 }
 
